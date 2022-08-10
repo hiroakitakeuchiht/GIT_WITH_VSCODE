@@ -18,6 +18,7 @@ def get_weather_data(city: str) -> dict[str:str]:
         + city
         + "&APPID=*******"
     )
+    test = response
     weather_data = json.loads(response.text)
     weather = weather_data["weather"][0]["main"]
     temperature = str(int(weather_data["main"]["temp"] - 273))
